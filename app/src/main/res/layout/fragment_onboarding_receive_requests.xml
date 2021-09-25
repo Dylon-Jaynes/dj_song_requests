@@ -6,6 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.onboarding.ReceiveRequestsFragment">
 
+    <ImageView
+        android:id="@+id/receive_requests_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1.5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/recieve_requests_img" />
+
     <TextView
         android:id="@+id/textview_receive_requests"
         android:layout_width="0dp"
