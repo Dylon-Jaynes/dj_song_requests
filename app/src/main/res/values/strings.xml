@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">DJ Song Requests Business</string>
+    <string name="basic_info_text">Enter Your Information:</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="email_hint">Email</string>
+    <string name="dj_id_text">Enter A Unique DJ-ID:</string>
+    <string name="dj_id_hint">ex. Jaybay DJ Entertainment</string>
+    <string name="dj_id_description_text">This will be a unique ID that you can display at events. Keep in mind that in order for patrons to send song requests to you, they will need to install the free client version of the app and know your DJ-ID.</string>
+    <string name="send_text">Send</string>
+    <string name="set_your_id_text">Set Your DJ-ID!</string>
+    <string name="set_your_id_description_text">This ID will distinguish you from other DJs and will ensure that people don\'t send song requests to the wrong event!</string>
+    <string name="display_at_events_text">Display At Events!</string>
+    <string name="display_at_events_description_text">Display your ID where everyone at your event can see it. Consider placing it on a banner or on a table near your setup.</string>
+    <string name="receive_song_requests_text">Receive Requests!</string>
+    <string name="receive_requests_description_text">Once you have your ID displayed, patrons will be able to download the client version of the app, enter your ID, and send you song requests.</string>
+    <string name="next_text">Next</string>
+    <string name="welcome_text">DJs Welcome!</string>
+    <string name="welcome_description_text">Get the party started with this easy to use song request handling app! In as little as 3 STEPS, you will be able to seamlessly manage incoming song requests so you can focus more on doing what you do best... Keeping people dancing! Before you get started, lets take a quick look at how the app works.</string>
+    <string name="continue_text">Continue</string>
+    <string name="current_user_requests_text">Current Requests:</string>
+    <string name="current_queue_text">Current Queue:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_started_text">Get Started!</string>
+</resources>

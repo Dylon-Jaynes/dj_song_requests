@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.onboarding.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/setIdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setIdFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.onboarding.SetIdFragment"
+        android:label="fragment_onboarding_set_id"
+        tools:layout="@layout/fragment_onboarding_set_id" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/displayIdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayIdFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.onboarding.DisplayIdFragment"
+        android:label="fragment_onboarding_display_id"
+        tools:layout="@layout/fragment_onboarding_display_id" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/receiveRequestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiveRequestsFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.onboarding.ReceiveRequestsFragment"
+        android:label="fragment_onboarding_receive_requests"
+        tools:layout="@layout/fragment_onboarding_receive_requests" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/basicInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basicInfoFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.info.BasicInfoFragment"
+        android:label="fragment_basic_info"
+        tools:layout="@layout/fragment_basic_info" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/djIdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/djIdFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.info.DjIdFragment"
+        android:label="fragment_dj_id"
+        tools:layout="@layout/fragment_dj_id" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/songListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songListFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.SongListFragment"
+        android:label="fragment_song_list"
+        tools:layout="@layout/fragment_song_list" />
+</navigation>
