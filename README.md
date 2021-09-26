@@ -1,5 +1,5 @@
 ## Disclaimer
-This app represents approximately 2 weeks of work. It
+This app represents approximately 20 hours of work. It
 is still in production and does not represent the finished product!
 
 ## Description
