@@ -1,4 +1,4 @@
-package com.example.djsongrequestsbusiness.ui.info
+package com.example.djsongrequestsbusiness.ui.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

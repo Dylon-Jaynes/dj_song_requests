@@ -1,4 +1,4 @@
-package com.example.djsongrequestsbusiness.ui.info
+package com.example.djsongrequestsbusiness.ui.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.djsongrequestsbusiness.R
+import com.example.djsongrequestsbusiness.ui.ViewModels.DjIdViewModel
 
 class DjIdFragment : Fragment() {
 

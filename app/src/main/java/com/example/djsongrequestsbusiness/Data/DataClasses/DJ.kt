@@ -1,4 +1,4 @@
-package com.example.djsongrequestsbusiness.Data
+package com.example.djsongrequestsbusiness.Data.DataClasses
 
 data class DJ(
     val firstName: String = "null",
