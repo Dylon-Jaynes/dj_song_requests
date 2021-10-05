@@ -10,8 +10,8 @@
         android:label="fragment_song_list"
         tools:layout="@layout/fragment_song_list" >
         <action
-            android:id="@+id/first_destination"
-            app:destination="@id/nested_nav" />
+            android:id="@+id/next_destination"
+            app:destination="@id/loginFragment" />
     </fragment>
     <navigation android:id="@+id/nested_nav"
         app:startDestination="@id/welcomeFragment">
@@ -22,7 +22,8 @@
             tools:layout="@layout/fragment_welcome">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/setIdFragment" />
+                app:destination="@id/setIdFragment"
+                app:popUpTo="@id/setIdFragment"/>
         </fragment>
         <fragment
             android:id="@+id/setIdFragment"
@@ -31,7 +32,8 @@
             tools:layout="@layout/fragment_onboarding_set_id">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/displayIdFragment" />
+                app:destination="@id/displayIdFragment"
+                app:popUpTo="@id/displayIdFragment"/>
         </fragment>
         <fragment
             android:id="@+id/displayIdFragment"
@@ -40,7 +42,8 @@
             tools:layout="@layout/fragment_onboarding_display_id">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/receiveRequestsFragment" />
+                app:destination="@id/receiveRequestsFragment"
+                app:popUpTo="@id/receiveRequestsFragment"/>
         </fragment>
         <fragment
             android:id="@+id/receiveRequestsFragment"
@@ -49,7 +52,8 @@
             tools:layout="@layout/fragment_onboarding_receive_requests">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/basicInfoFragment" />
+                app:destination="@id/basicInfoFragment"
+                app:popUpTo="@id/basicInfoFragment"/>
         </fragment>
         <fragment
             android:id="@+id/basicInfoFragment"
@@ -58,7 +62,8 @@
             tools:layout="@layout/fragment_basic_info">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/djIdFragment" />
+                app:destination="@id/djIdFragment"
+                app:popUpTo="@id/djIdFragment"/>
         </fragment>
         <fragment
             android:id="@+id/djIdFragment"
@@ -67,7 +72,22 @@
             tools:layout="@layout/fragment_dj_id">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/songListFragment" />
+                app:destination="@id/songListFragment2"
+                app:popUpTo="@id/songListFragment" />
         </fragment>
+        <fragment
+            android:id="@+id/songListFragment2"
+            android:name="com.example.djsongrequestsbusiness.ui.Fragments.SongListFragment"
+            android:label="fragment_song_list"
+            tools:layout="@layout/fragment_song_list" />
     </navigation>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.Fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/nested_nav" />
+    </fragment>
 </navigation>
