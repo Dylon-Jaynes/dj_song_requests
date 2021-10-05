@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.djsongrequestsbusiness.R
 import com.example.djsongrequestsbusiness.databinding.FragmentSongListBinding
 import com.example.djsongrequestsbusiness.ui.ViewModels.SongListViewModel
@@ -29,7 +32,7 @@ class SongListFragment : Fragment() {
         songListViewModel.isFirstRun("isFirstRun", true)
 
         songListViewModel.isFirstRunEvent.observe(viewLifecycleOwner) {
-            Navigation.findNavController(view).navigate(R.id.first_destination)
+            Navigation.findNavController(view).navigate(R.id.next_destination,null, NavOptions.Builder().setPopUpTo(findNavController().graph.startDestination, true).build())
         }
 
         return view
