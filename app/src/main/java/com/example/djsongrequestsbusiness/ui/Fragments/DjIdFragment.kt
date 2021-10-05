@@ -20,7 +20,7 @@ class DjIdFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_dj_id, container, false)
 
-        val viewModel: DjIdViewModel = ViewModelProvider(this)[DjIdViewModel::class.java]
+//        val viewModel: DjIdViewModel = ViewModelProvider(this)[DjIdViewModel::class.java]
 
         view.findViewById<Button>(R.id.button_send).setOnClickListener { Navigation.findNavController(view).navigate(R.id.next_destination) }
 
