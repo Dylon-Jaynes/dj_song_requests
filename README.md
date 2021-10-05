@@ -9,18 +9,18 @@ This app is part one of two apps that I am currently developing for my Father's 
 
 
 <p float="left">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/BasicInfoScreen.png" width=25% height=25% hspace="10">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/WelcomeScreen.png" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/BasicInfoScreen.jpg" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/WelcomeScreen.jpg" width=25% height=25% hspace="10">
 </p>
 
 <p float="left">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/OnboardingScreen1.png" width=25% height=25% hspace="10">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/OnboardingScreen2.png" width=25% height=25% hspace="10">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/OnboardingScreen3.png" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/OnboardingScreen1.jpg" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/OnboardingScreen2.jpg" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/OnboardingScreen3.jpg" width=25% height=25% hspace="10">
 </p>
 
 <p float="left">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/BasicInfoScreen.png" width=25% height=25% hspace="10">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/EnterIdScreen.png" width=25% height=25% hspace="10">
-<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/res/drawable/screenshots/MainScreen.png" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/BasicInfoScreen.jpg" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/EnterIdScreen.jpg" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/MainScreen.jpg" width=25% height=25% hspace="10">
 </p>
