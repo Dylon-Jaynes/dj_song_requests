@@ -23,4 +23,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="get_started_text">Get Started!</string>
+    <string name="app_title_text">DJ Song Requests</string>
+    <string name="password_hint">Password</string>
+    <string name="login_text">Login</string>
 </resources>

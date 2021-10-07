@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/display_id" />
+        app:srcCompat="@drawable/rsz_display_id" />
 
     <TextView
         android:id="@+id/textview_display_at_events"

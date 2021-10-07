@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/recieve_requests_img" />
+        app:srcCompat="@drawable/rsz_receive_requests" />
 
     <TextView
         android:id="@+id/textview_receive_requests"
