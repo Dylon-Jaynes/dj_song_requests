@@ -29,14 +29,14 @@
         app:layout_constraintStart_toStartOf="@id/welcome_guideline1"
         app:layout_constraintTop_toBottomOf="@id/welcome_horizontal_guideline2" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/button_continue"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/continue_text"
-        app:layout_constraintDimensionRatio="2.3:1"
-        app:layout_constraintEnd_toStartOf="@+id/welcome_guideline4"
-        app:layout_constraintStart_toStartOf="@+id/welcome_guideline3"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toStartOf="@+id/welcome_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/welcome_guideline1"
         app:layout_constraintTop_toTopOf="@+id/welcome_horizontal_guideline3" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -72,14 +72,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.12" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/welcome_horizontal_guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30" />
+        app:layout_constraintGuide_percent="0.21" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/welcome_horizontal_guideline3"

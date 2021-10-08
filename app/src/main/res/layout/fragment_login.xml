@@ -21,12 +21,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/app_title_text"
-        android:textSize="43sp"
+        android:textSize="40sp"
         app:layout_constraintDimensionRatio="6:1"
-        app:layout_constraintTop_toBottomOf="@+id/login_horizontal_guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/login_guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/login_guideline1"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/login_horizontal_guideline1" />
 
     <EditText
         android:id="@+id/edittext_email"
@@ -95,21 +95,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".42" />
+        app:layout_constraintGuide_percent=".40" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/login_horizontal_guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
+        app:layout_constraintGuide_percent="0.52" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/login_horizontal_guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.64" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/login_horizontal_guideline4"

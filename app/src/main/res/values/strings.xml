@@ -13,7 +13,7 @@
     <string name="display_at_events_text">Display At Events!</string>
     <string name="display_at_events_description_text">Display your ID where everyone at your event can see it. Consider placing it on a banner or on a table near your setup.</string>
     <string name="receive_song_requests_text">Receive Requests!</string>
-    <string name="receive_requests_description_text">Once you have your ID displayed, patrons will be able to download the client version of the app, enter your ID, and send you song requests.</string>
+    <string name="receive_requests_description_text">Once you have your ID displayed, patrons will be able to download the client version of the app, enter your ID, and send you songs.</string>
     <string name="next_text">Next</string>
     <string name="welcome_text">DJs Welcome!</string>
     <string name="welcome_description_text">Get the party started with this easy to use song request handling app! In as little as 3 STEPS, you will be able to seamlessly manage incoming song requests so you can focus more on doing what you do best... Keeping people dancing! Before you get started, lets take a quick look at how the app works.</string>

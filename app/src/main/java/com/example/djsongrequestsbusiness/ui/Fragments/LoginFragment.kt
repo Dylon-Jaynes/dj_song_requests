@@ -29,6 +29,10 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        binding.textviewRegister.setOnClickListener(View.OnClickListener {
+            Navigation.findNavController(view).navigate(R.id.next_destination)
+        })
+
         return view
     }
 
