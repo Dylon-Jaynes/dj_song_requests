@@ -2,17 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/songListFragment">
     <fragment
         android:id="@+id/songListFragment"
-        android:name="com.example.djsongrequestsbusiness.ui.Fragments.SongListFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.fragments.SongListFragment"
         android:label="fragment_song_list"
         tools:layout="@layout/fragment_song_list" >
         <action
             android:id="@+id/next_destination"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.djsongrequestsbusiness.ui.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/next_destination"
+            app:destination="@id/nested_nav" />
+    </fragment>
+
     <navigation android:id="@+id/nested_nav"
         app:startDestination="@id/welcomeFragment">
         <fragment
@@ -56,29 +65,27 @@
         </fragment>
         <fragment
             android:id="@+id/basicInfoFragment"
-            android:name="com.example.djsongrequestsbusiness.ui.Fragments.BasicInfoFragment"
+            android:name="com.example.djsongrequestsbusiness.ui.fragments.BasicInfoFragment"
             android:label="fragment_basic_info"
             tools:layout="@layout/fragment_basic_info">
             <action
                 android:id="@+id/next_destination"
-                app:destination="@id/djIdFragment" />
+                app:destination="@id/djIdFragment">
+            </action>
         </fragment>
         <fragment
             android:id="@+id/djIdFragment"
-            android:name="com.example.djsongrequestsbusiness.ui.Fragments.DjIdFragment"
+            android:name="com.example.djsongrequestsbusiness.ui.fragments.DjIdFragment"
             android:label="fragment_dj_id"
-            tools:layout="@layout/fragment_dj_id"/>
+            tools:layout="@layout/fragment_dj_id">
+            <argument
+                android:name="loginModel"
+                app:argType="com.example.djsongrequestsbusiness.data.dataClasses.LoginModel"
+                app:nullable="true"
+                android:defaultValue="@null" />
+        </fragment>
         <action
             android:id="@+id/next_destination"
             app:destination="@id/songListFragment" />
     </navigation>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.djsongrequestsbusiness.ui.Fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/next_destination"
-            app:destination="@id/nested_nav" />
-    </fragment>
 </navigation>

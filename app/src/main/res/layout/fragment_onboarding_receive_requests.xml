@@ -7,7 +7,6 @@
     tools:context=".ui.onboarding.ReceiveRequestsFragment">
 
     <ImageView
-        android:id="@+id/receive_requests_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1.5:1"
@@ -28,7 +27,6 @@
         app:layout_constraintTop_toBottomOf="@id/onboarding_horizontal_guideline1" />
 
     <TextView
-        android:id="@+id/textview_receive_requests_description"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/receive_requests_description_text"
@@ -106,14 +104,12 @@
         app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/onboarding_guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.31" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/onboarding_guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

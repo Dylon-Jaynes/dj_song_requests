@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Fragments.BasicInfoFragment">
+    tools:context=".ui.fragments.BasicInfoFragment">
 
     <TextView
-        android:id="@+id/textview_basic_info"
+        android:id="@+id/textview_set_your_login_info"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/basic_info_text"
@@ -16,6 +16,17 @@
         app:layout_constraintEnd_toStartOf="@+id/info_guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/info_guideline1"
+        app:layout_constraintTop_toTopOf="@+id/info_horizontal_guideline1" />
+
+    <EditText
+        android:id="@+id/edittext_username"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="@string/username_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintDimensionRatio="6:1"
+        app:layout_constraintEnd_toStartOf="@+id/info_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/info_guideline1"
         app:layout_constraintTop_toTopOf="@+id/info_horizontal_guideline2" />
 
     <EditText
@@ -23,6 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
         app:layout_constraintDimensionRatio="6:1"
         app:layout_constraintEnd_toStartOf="@+id/info_guideline2"
         app:layout_constraintStart_toStartOf="@+id/info_guideline1"
@@ -33,6 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="@string/password_hint"
+        android:inputType="textPassword"
         app:layout_constraintDimensionRatio="6:1"
         app:layout_constraintEnd_toStartOf="@+id/info_guideline2"
         app:layout_constraintStart_toStartOf="@+id/info_guideline1"
@@ -74,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.34" />
+        app:layout_constraintGuide_percent="0.40" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/info_horizontal_guideline3"

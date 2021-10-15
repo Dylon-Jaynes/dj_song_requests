@@ -1,19 +1,13 @@
-package com.example.djsongrequestsbusiness.ui.Fragments
+package com.example.djsongrequestsbusiness.ui.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.djsongrequestsbusiness.R
 import com.example.djsongrequestsbusiness.databinding.FragmentLoginBinding
-import com.example.djsongrequestsbusiness.databinding.FragmentSongListBinding
-import com.example.djsongrequestsbusiness.ui.ViewModels.LoginViewModel
-import com.example.djsongrequestsbusiness.ui.ViewModels.SongListViewModel
 
 class LoginFragment : Fragment() {
 

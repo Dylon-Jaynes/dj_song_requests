@@ -1,9 +1,7 @@
-package com.example.djsongrequestsbusiness.Data.Repositories
+package com.example.djsongrequestsbusiness.data.repositories
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.view.View
-import java.security.Key
 
 class SharedPrefsRepo(val context: Context) {
 

@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Fragments.SongListFragment">
+    tools:context=".ui.fragments.SongListFragment">
 
     <View
+        android:id="@+id/view"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_song_list"
         app:layout_constraintEnd_toStartOf="@+id/song_list_guideline2"
-        app:layout_constraintStart_toStartOf="@+id/song_list_guideline2" />
+        app:layout_constraintStart_toStartOf="@+id/song_list_guideline2"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_song_list" />
 
     <View
         android:layout_width="match_parent"
@@ -31,7 +32,6 @@
         android:elevation="4dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_current_user_requests"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintDimensionRatio="1:1"
@@ -40,7 +40,6 @@
         app:layout_constraintTop_toBottomOf="@id/song_list_horizontal_guideline2" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_current_queue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintDimensionRatio="1:1"
@@ -49,7 +48,6 @@
         app:layout_constraintTop_toBottomOf="@id/song_list_horizontal_guideline2"/>
 
     <TextView
-        android:id="@+id/textview_current_user_requests"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textSize="20sp"
@@ -61,7 +59,6 @@
         app:layout_constraintEnd_toEndOf="@id/song_list_guideline2"/>
 
     <TextView
-        android:id="@+id/textview_current_queue"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center_horizontal"
@@ -107,6 +104,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.12" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="29dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="352dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.Fragments.DjIdFragment">
+    tools:context=".ui.fragments.DjIdFragment">
 
     <TextView
-        android:id="@+id/textview_dj_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/dj_id_text"
@@ -28,7 +27,6 @@
         app:layout_constraintTop_toTopOf="@+id/dj_id_horizontal_guideline2" />
 
     <TextView
-        android:id="@+id/textview_dj_id_description"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/dj_id_description_text"
