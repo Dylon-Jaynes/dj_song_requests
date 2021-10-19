@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.djsongrequestsbusiness.data.dataClasses.DjModel
+import com.example.djsongrequestsbusiness.data.dataClasses.LoginModel
 import com.example.djsongrequestsbusiness.databinding.FragmentDjIdBinding
 import com.example.djsongrequestsbusiness.ui.viewModels.DjIdViewModel
-import com.google.firebase.database.DatabaseReference
 
 class DjIdFragment : Fragment() {
 
@@ -18,8 +18,6 @@ class DjIdFragment : Fragment() {
     // This property is only valid between onCreateView and onDestroyView
     private val binding get()= _binding!!
 //    private lateinit var database: DatabaseReference
-    private val viewModel: DjIdViewModel = ViewModelProvider(this)[DjIdViewModel::class.java]
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,17 +26,17 @@ class DjIdFragment : Fragment() {
     ): View? {
 
         _binding = FragmentDjIdBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        return view
+        return binding.root
     }
 
-    val args: DjIdFragmentArgs by navArgs()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val viewModel: DjIdViewModel = ViewModelProvider(this)[DjIdViewModel::class.java]
 
         binding.buttonSend.setOnClickListener(View.OnClickListener {
-            val newDj = DjModel(binding.edittextDjId.text.toString(), args.loginModel!!)
+            val args: DjIdFragmentArgs by navArgs<DjIdFragmentArgs>()
+            val newLogin = LoginModel(args.email, args.password)
+            val newDj = DjModel(args.username, binding.edittextDjId.toString(), newLogin)
             viewModel.createAccount(newDj)
         })
     }

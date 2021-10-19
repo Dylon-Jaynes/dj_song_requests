@@ -79,10 +79,14 @@
             android:label="fragment_dj_id"
             tools:layout="@layout/fragment_dj_id">
             <argument
-                android:name="loginModel"
-                app:argType="com.example.djsongrequestsbusiness.data.dataClasses.LoginModel"
-                app:nullable="true"
-                android:defaultValue="@null" />
+                android:name="username"
+                app:argType="string" />
+            <argument
+                android:name="email"
+                app:argType="string" />
+            <argument
+                android:name="password"
+                app:argType="string" />
         </fragment>
         <action
             android:id="@+id/next_destination"
