@@ -1,63 +1,52 @@
 package com.example.djsongrequestsbusiness.ui.viewModels
 
-import android.content.ContentValues.TAG
-import android.util.Log
-import androidx.lifecycle.LiveData
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.djsongrequestsbusiness.Event
 import com.example.djsongrequestsbusiness.data.dataClasses.DjModel
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import java.lang.Exception
+import com.example.djsongrequestsbusiness.data.repositories.UserRepository
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
-class DjIdViewModel : ViewModel() {
+class DjIdViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val auth = Firebase.auth
+    private val auth = FirebaseAuth.getInstance()
     private val authStatusMessage = MutableLiveData<Event<String>>()
+    private val context by lazy { getApplication<Application>().applicationContext }
 
-    val message : LiveData<Event<String>>
-        get() = authStatusMessage
-
-    fun createAccount(djModel: DjModel) {
-
-//        authentication.createUserWithEmailAndPassword(email,password)
-//            .addOnCompleteListener {task: Task<AuthResult> ->
-//                if(!task.isSuccessful){
-//                    println("Registration Failed with ${task.exception}")
-//                    _registrationStatus.postValue(ResultOf.Success("Registration Failed with ${task.exception}"))
-//                }else{
-//                    _registrationStatus.postValue(ResultOf.Success("UserCreated"))
-//
+//    fun createAccount(djModel: DjModel) {
+//        auth.createUserWithEmailAndPassword(djModel.login.email, djModel.login.password)
+//            .addOnCompleteListener(context) { task ->
+//                if (task.isSuccessful) {
+//                    // Sign in success, update UI with the signed-in user's information
+//                    Log.d(TAG, "createUserWithEmail:success")
+//                    val user = auth.currentUser
+////                    updateUI(user)
+//                    Toast.makeText(context, "Authentication for user $user was successful!", Toast.LENGTH_SHORT).show()
+//                } else {
+//                    // If sign in fails, display a message to the user.
+//                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+//                    Toast.makeText(context, "Authentication failed.",
+//                        Toast.LENGTH_SHORT).show()
+////                    updateUI(null)
 //                }
-//                loading.postValue(false)
 //            }
+//    }
 
-        if(!isUserSignedIn()){
-            try {
-                auth.createUserWithEmailAndPassword(djModel.login.email, djModel.login.password)
-                    .addOnCompleteListener() { task ->
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success")
-                            val user = auth.currentUser
-                            authStatusMessage.value = Event("User Account Created Successfully")
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                            authStatusMessage.value = Event("Authentication Failed")
-                        }
-                    }
-            }catch (e: Exception){
-                println(e.stackTrace)
-            }
-
-        }
-        // [END create_user_with_email]
+    fun onClickSignUp(djModel: DjModel): Task<AuthResult> {
+        val userRepository = UserRepository(auth)
+        return userRepository.userSignUp(djModel.login.email, djModel.login.password)
     }
 
-    private fun isUserSignedIn(): Boolean {
-        val currentUser = auth.currentUser
-        return currentUser != null
+//    private fun isUserSignedIn(): Boolean {
+//        val currentUser = auth.currentUser
+//        return currentUser != null
+//    }
+
+    private fun updateUI(user: FirebaseUser){
+
     }
 }
