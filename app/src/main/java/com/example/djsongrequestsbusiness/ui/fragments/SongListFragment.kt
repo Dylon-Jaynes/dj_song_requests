@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.djsongrequestsbusiness.R
 import com.example.djsongrequestsbusiness.databinding.FragmentSongListBinding
 import com.example.djsongrequestsbusiness.ui.viewModels.SongListViewModel
+import kotlin.system.exitProcess
 
 class SongListFragment : Fragment() {
 
@@ -27,9 +29,12 @@ class SongListFragment : Fragment() {
         val view = binding.root
         val songListViewModel = SongListViewModel(requireActivity().application)
 
-//        songListViewModel.isFirstRun("isFirstRun", true)
+        // Ends MainActivity onBackPressed.
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().parent.finish()
+        }
 
-//        songListViewModel.isFirstRunEvent.observe(viewLifecycleOwner) {
+
         binding.button.setOnClickListener(View.OnClickListener {
             Navigation.findNavController(view).navigate(R.id.next_destination)
         })
