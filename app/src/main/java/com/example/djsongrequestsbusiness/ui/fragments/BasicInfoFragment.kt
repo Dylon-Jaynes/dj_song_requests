@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import androidx.annotation.NonNull
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.NavController
 
 
@@ -49,6 +50,14 @@ class BasicInfoFragment : Fragment() {
         // Sends user back to login onBackPressed.
         val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             Navigation.findNavController(view).navigate(R.id.to_login_frag)
+        }
+
+        binding.buttonContinue.isEnabled = false
+
+        binding.edittextUsername.addTextChangedListener {
+            val username = binding.edittextUsername.text.toString().trim()
+            /* TODO add code to enable the continue button if username, email, and
+                password aren't empty. */
         }
 
         binding.buttonContinue.setOnClickListener(View.OnClickListener {
