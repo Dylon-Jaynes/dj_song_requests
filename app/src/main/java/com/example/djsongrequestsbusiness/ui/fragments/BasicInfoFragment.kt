@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import androidx.annotation.NonNull
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 
 
@@ -52,31 +53,21 @@ class BasicInfoFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.to_login_frag)
         }
 
-        binding.buttonContinue.isEnabled = false
+//        binding.buttonContinue.isEnabled = false
 
-        binding.edittextUsername.addTextChangedListener {
-            val username = binding.edittextUsername.text.toString().trim()
-            /* TODO add code to enable the continue button if username, email, and
-                password aren't empty. */
-        }
+//        binding.edittextUsername.addTextChangedListener {
+//            val username = binding.edittextUsername.text.toString().trim()
+//            /* TODO add code to enable the continue button if username, email, and
+//                password aren't empty. */
+//        }
 
         binding.buttonContinue.setOnClickListener(View.OnClickListener {
             val newLogin = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim())
-            val taskResult = viewModel.onClickSignUp(newLogin)
-            taskResult.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(ContentValues.TAG, "createUserWithEmail:success")
-                    Toast.makeText(context, "Your account has been successfully created!", Toast.LENGTH_SHORT).show()
-                    val navController = Navigation.findNavController(view)
-                    navController.navigate(R.id.next_destination)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(ContentValues.TAG, "createUserWithEmail:failure", task.exception)
-                    binding.edittextEmail.error = "This email address is already in use by another account."
-                    }
-                }
-
+            viewModel.onClickSignUp(newLogin)
+            val authStatusObserver = Observer<String> { newAuthString ->
+                Toast.makeText(requireContext(), newAuthString, Toast.LENGTH_SHORT).show()
+                Navigation.findNavController(view).navigate(R.id.next_destination)
+            }
         })
     }
 
