@@ -14,6 +14,10 @@ import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
+
+
+
 
 
 class BasicInfoViewModel(application: Application): AndroidViewModel(application) {
@@ -25,6 +29,10 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
     private val _displayCreateUserResult = MutableLiveData<Event<String>>()
     val displayCreateUserResult: LiveData<Event<String>>
         get() = _displayCreateUserResult
+
+    private val _setEmailError = MutableLiveData<String>()
+    val setEmailError: LiveData<String>
+        get() = _setEmailError
 
     private val auth = FirebaseAuth.getInstance()
 
@@ -45,6 +53,18 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
                 // If sign in fails, display a message to the user.
                 Log.w(ContentValues.TAG, "createUserWithEmail:failure")
                 _displayCreateUserResult.value = Event("User account creation failed.")
+                    try {
+                        throw result.exception as FirebaseAuthException
+                    } catch (e: FirebaseAuthException) {
+                        when (e.errorCode) {
+                            "ERROR_EMAIL_ALREADY_IN_USE" -> _setEmailError.value = e.message
+                            "ERROR_MISSING_EMAIL" -> _setEmailError.value = e.message
+                            "ERROR_INVALID_EMAIL" -> _setEmailError.value = "Please enter a valid email."
+//                            "ERROR_WEAK_PASSWORD" -> TODO() Create LiveData for displaying password field errors.
+                        }
+                    }
+
+
 //                binding.edittextEmail.error = "This email address is already in use by another account."
             }
         }

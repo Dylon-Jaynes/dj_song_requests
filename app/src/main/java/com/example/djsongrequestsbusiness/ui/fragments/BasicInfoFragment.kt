@@ -48,6 +48,11 @@ class BasicInfoFragment : Fragment() {
 
         })
 
+        // Set field errors if required.
+        viewModel.setEmailError.observe(viewLifecycleOwner, Observer { it ->
+            binding.edittextEmail.error = it.toString()
+        })
+
         // Navigates to the next fragment if the event has never been handled before.
         viewModel.navigateToDjIdFrag.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {
