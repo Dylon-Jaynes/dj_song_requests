@@ -69,11 +69,12 @@ class BasicInfoFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.to_login_frag)
         }
 
-        displayCreateUserResult(view)
+        // Call method to handle the onClick.
+        handleOnClick(view)
 
     }
 
-    private fun displayCreateUserResult(view: View) {
+    private fun handleOnClick(view: View) {
         binding.buttonContinue.setOnClickListener(View.OnClickListener {
             val newLogin = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim())
             viewModel.onClickSignUp(newLogin)

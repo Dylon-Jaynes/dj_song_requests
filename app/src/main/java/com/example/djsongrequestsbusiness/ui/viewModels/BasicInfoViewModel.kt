@@ -51,7 +51,6 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
                 _setPasswordError.value = "A password must be provided."
             }
         }
-
     }
 
     private fun getAuthStatusMessage(result: Task<AuthResult>) {
@@ -75,9 +74,6 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
                             "ERROR_WEAK_PASSWORD" -> _setPasswordError.value = e.message
                         }
                     }
-
-
-//                binding.edittextEmail.error = "This email address is already in use by another account."
             }
         }
     }
