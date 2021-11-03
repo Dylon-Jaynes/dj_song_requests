@@ -14,7 +14,6 @@ import com.example.djsongrequestsbusiness.data.dataClasses.LoginModel
 import com.example.djsongrequestsbusiness.databinding.FragmentBasicInfoBinding
 import com.example.djsongrequestsbusiness.ui.viewModels.BasicInfoViewModel
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 
 class BasicInfoFragment : Fragment() {
 
@@ -51,6 +50,11 @@ class BasicInfoFragment : Fragment() {
         // Set field errors if required.
         viewModel.setEmailError.observe(viewLifecycleOwner, Observer { it ->
             binding.edittextEmail.error = it.toString()
+            binding.edittextEmail.requestFocus()
+        })
+        viewModel.setPasswordError.observe(viewLifecycleOwner, Observer { it ->
+            binding.edittextPassword.error = it.toString()
+            binding.edittextPassword.requestFocus()
         })
 
         // Navigates to the next fragment if the event has never been handled before.

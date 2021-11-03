@@ -15,10 +15,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
-
-
-
-
+import java.lang.IllegalArgumentException
 
 class BasicInfoViewModel(application: Application): AndroidViewModel(application) {
 
@@ -34,12 +31,27 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
     val setEmailError: LiveData<String>
         get() = _setEmailError
 
+    private val _setPasswordError = MutableLiveData<String>()
+    val setPasswordError: LiveData<String>
+        get() = _setPasswordError
+
     private val auth = FirebaseAuth.getInstance()
 
     fun onClickSignUp(loginModel: LoginModel) {
         val userRepository = UserRepository(auth)
-        val userSignUpResult = userRepository.userSignUp(loginModel.email, loginModel.password)
-        getAuthStatusMessage(userSignUpResult)
+        try {
+            val userSignUpResult = userRepository.userSignUp(loginModel.email, loginModel.password)
+            getAuthStatusMessage(userSignUpResult)
+        }catch (e: IllegalArgumentException){
+            if (loginModel.email.isNullOrEmpty()){
+                _setEmailError.value = "An email address must be provided."
+            }
+
+            if (loginModel.password.isNullOrEmpty()){
+                _setPasswordError.value = "A password must be provided."
+            }
+        }
+
     }
 
     private fun getAuthStatusMessage(result: Task<AuthResult>) {
@@ -58,9 +70,9 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
                     } catch (e: FirebaseAuthException) {
                         when (e.errorCode) {
                             "ERROR_EMAIL_ALREADY_IN_USE" -> _setEmailError.value = e.message
-                            "ERROR_MISSING_EMAIL" -> _setEmailError.value = e.message
                             "ERROR_INVALID_EMAIL" -> _setEmailError.value = "Please enter a valid email."
-//                            "ERROR_WEAK_PASSWORD" -> TODO() Create LiveData for displaying password field errors.
+                            "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL" -> _setPasswordError.value = e.message
+                            "ERROR_WEAK_PASSWORD" -> _setPasswordError.value = e.message
                         }
                     }
 
