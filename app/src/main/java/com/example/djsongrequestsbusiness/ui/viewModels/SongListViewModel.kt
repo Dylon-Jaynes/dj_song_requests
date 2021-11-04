@@ -2,8 +2,6 @@ package com.example.djsongrequestsbusiness.ui.viewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.djsongrequestsbusiness.data.repositories.SharedPrefsRepo
-import com.example.djsongrequestsbusiness.Event
 
 class SongListViewModel(val app: Application)
     : AndroidViewModel(app) {
