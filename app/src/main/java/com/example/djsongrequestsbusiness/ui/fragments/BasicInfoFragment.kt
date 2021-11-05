@@ -78,6 +78,7 @@ class BasicInfoFragment : Fragment() {
         binding.buttonContinue.setOnClickListener(View.OnClickListener {
             val newLogin = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim())
             viewModel.onClickSignUp(newLogin)
+            viewModel.deleteUser()
         })
     }
 

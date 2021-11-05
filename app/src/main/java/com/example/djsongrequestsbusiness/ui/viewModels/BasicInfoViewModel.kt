@@ -10,6 +10,7 @@ import com.example.djsongrequestsbusiness.Event
 
 import com.example.djsongrequestsbusiness.data.dataClasses.LoginModel
 import com.example.djsongrequestsbusiness.data.repositories.UserRepository
+import com.example.djsongrequestsbusiness.utils.EspressoIdlingResource
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -39,6 +40,7 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
 
     fun onClickSignUp(loginModel: LoginModel) {
         val userRepository = UserRepository(auth)
+        EspressoIdlingResource.increment()
         try {
             val userSignUpResult = userRepository.userSignUp(loginModel.email, loginModel.password)
             getAuthStatusMessage(userSignUpResult)
@@ -75,10 +77,12 @@ class BasicInfoViewModel(application: Application): AndroidViewModel(application
                         }
                     }
             }
+            EspressoIdlingResource.decrement()
         }
+
     }
 
-    fun userSignOut() {
-        auth.signOut()
+    fun deleteUser() {
+        auth.currentUser?.delete()
     }
 }

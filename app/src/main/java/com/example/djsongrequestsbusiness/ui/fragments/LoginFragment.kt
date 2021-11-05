@@ -46,6 +46,7 @@ class LoginFragment : Fragment() {
         binding.buttonRegister.setOnClickListener(View.OnClickListener {
             Navigation.findNavController(view).navigate(R.id.next_destination)
         })
+
     }
 
     override fun onDestroyView() {
