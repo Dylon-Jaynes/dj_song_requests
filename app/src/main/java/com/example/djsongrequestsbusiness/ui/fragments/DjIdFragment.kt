@@ -17,7 +17,6 @@ class DjIdFragment : Fragment() {
     private var _binding: FragmentDjIdBinding? = null
     // This property is only valid between onCreateView and onDestroyView
     private val binding get()= _binding!!
-//    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -11,7 +11,6 @@ import com.example.djsongrequestsbusiness.Event
 import com.example.djsongrequestsbusiness.data.dataClasses.LoginModel
 import com.example.djsongrequestsbusiness.data.repositories.UserRepository
 import com.example.djsongrequestsbusiness.utils.EspressoIdlingResource
-import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
