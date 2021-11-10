@@ -33,7 +33,7 @@ class SongListFragment() : Fragment() {
 
         // Ends MainActivity onBackPressed.
         val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            requireActivity().parent.finish()
+            requireActivity().finish()
         }
 
 

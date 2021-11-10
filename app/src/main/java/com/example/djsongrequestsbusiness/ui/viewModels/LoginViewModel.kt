@@ -69,7 +69,9 @@ class LoginViewModel(application: Application): AndroidViewModel(application) {
                 } catch (e: FirebaseAuthException) {
                     when (e.errorCode) {
                         "ERROR_INVALID_EMAIL" -> _setEmailError.value = "Please enter a valid email."
-                        "ERROR_WEAK_PASSWORD" -> _setPasswordError.value = e.message
+                        "ERROR_INVALID_CREDENTIAL" -> _setEmailError.value = e.message
+                        "ERROR_WRONG_PASSWORD" -> _setPasswordError.value = "The password is invalid."
+                        "ERROR_USER_NOT_FOUND" -> _setEmailError.value = "There is no user with the provided email. Please register your email below."
                     }
                 }
             }
