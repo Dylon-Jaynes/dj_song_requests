@@ -2,26 +2,31 @@ package com.example.djsongrequestsbusiness.ui.viewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.example.djsongrequestsbusiness.Event
+import com.example.djsongrequestsbusiness.data.repositories.UserRepository
+import com.google.firebase.auth.FirebaseAuth
 
-class SongListViewModel(val app: Application)
-    : AndroidViewModel(app) {
+class SongListViewModel(application: Application) : AndroidViewModel(application) {
 
-//    private val sharedPrefsRepo = SharedPrefsRepo(app.applicationContext)
+    private val auth = FirebaseAuth.getInstance()
+    private val userRepository = UserRepository(auth)
 
-    // Declares a SingleLiveEvent which will only deliver the event to an observer
-    // that is Observing at the time of the event.
-//    val isFirstRunEvent = Event<Boolean>()
-//
-//    fun isFirstRun(KEY_NAME: String, defaultValue: Boolean) {
-//        if(sharedPrefsRepo.getValueBoolean(KEY_NAME, defaultValue)){
-//            isFirstRunEvent.value = sharedPrefsRepo.getValueBoolean(KEY_NAME, defaultValue)
-//            sharedPrefsRepo.savePref(KEY_NAME, false)
-//        }
-//    }
-//
-//    fun saveSharedPref(KEY_NAME: String, value: Boolean) {
-//        sharedPrefsRepo.savePref(KEY_NAME, value)
-//    }
+    private val _navigateToLoginFrag = MutableLiveData<Event<Boolean>>()
+    val navigateToLoginFrag: LiveData<Event<Boolean>>
+        get() = _navigateToLoginFrag
 
+    fun isUserSignedIn() {
+        if (userRepository.getUser() != null) {
+            return
+        }else{
+            _navigateToLoginFrag.value = Event(true)
+        }
+    }
 
+    fun signOutUser() {
+        auth.signOut()
+        _navigateToLoginFrag.value = Event(true)
+    }
 }

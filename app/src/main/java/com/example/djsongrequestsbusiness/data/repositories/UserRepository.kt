@@ -13,4 +13,8 @@ class UserRepository(private val auth: FirebaseAuth) {
     fun userLogin(email: String,password: String): Task<AuthResult> {
         return auth.signInWithEmailAndPassword(email, password)
     }
+
+    fun getUser(): FirebaseUser? {
+        return auth.currentUser
+    }
 }

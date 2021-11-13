@@ -39,7 +39,7 @@ class LoginFragment : Fragment() {
 
         // Sends user back to SongListFragment onBackPressed.
         val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            Navigation.findNavController(view).navigate(R.id.to_main_frag)
+            requireActivity().finish()
         }
 
         viewModel.displayUserLoginResult.observe(viewLifecycleOwner, Observer { it ->
