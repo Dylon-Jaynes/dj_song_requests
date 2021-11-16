@@ -60,7 +60,8 @@ class BasicInfoFragment : Fragment() {
         // Navigates to the next fragment if the event has never been handled before.
         viewModel.navigateToDjIdFrag.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {
-                Navigation.findNavController(view).navigate(R.id.next_destination)
+                val action = BasicInfoFragmentDirections.nextDestination(binding.edittextEmail.text.toString(), binding.edittextPassword.text.toString(), binding.edittextUsername.text.toString())
+                Navigation.findNavController(view).navigate(action)
             }
         })
 
@@ -76,7 +77,7 @@ class BasicInfoFragment : Fragment() {
 
     private fun handleOnClick(view: View) {
         binding.buttonContinue.setOnClickListener(View.OnClickListener {
-            val newLogin = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim())
+            val newLogin = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim(), binding.edittextUsername.text.toString())
             viewModel.onClickSignUp(newLogin)
 //            viewModel.deleteUser()
         })

@@ -13,7 +13,6 @@ import androidx.navigation.Navigation
 import com.example.djsongrequestsbusiness.R
 import com.example.djsongrequestsbusiness.data.dataClasses.LoginModel
 import com.example.djsongrequestsbusiness.databinding.FragmentLoginBinding
-import com.example.djsongrequestsbusiness.ui.viewModels.DjIdViewModel
 import com.example.djsongrequestsbusiness.ui.viewModels.LoginViewModel
 
 class LoginFragment : Fragment() {
@@ -74,7 +73,7 @@ class LoginFragment : Fragment() {
         })
 
         binding.buttonLogin.setOnClickListener(View.OnClickListener {
-            val loginCredentials = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim())
+            val loginCredentials = LoginModel(binding.edittextEmail.text.toString().trim(), binding.edittextPassword.text.toString().trim(), "")
             viewModel.onClickLogin(loginCredentials)
         })
 

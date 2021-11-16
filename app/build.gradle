@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'androidx.test.espresso:espresso-idling-resource:3.4.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
 
     androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0')
     androidTestImplementation('androidx.test:runner:1.4.0')

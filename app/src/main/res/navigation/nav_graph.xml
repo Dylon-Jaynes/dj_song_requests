@@ -90,9 +90,6 @@
         android:label="fragment_dj_id"
         tools:layout="@layout/fragment_dj_id">
         <argument
-            android:name="username"
-            app:argType="string" />
-        <argument
             android:name="email"
             app:argType="string" />
         <argument
@@ -101,5 +98,9 @@
         <action
             android:id="@+id/to_main_frag"
             app:destination="@id/songListFragment" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>
