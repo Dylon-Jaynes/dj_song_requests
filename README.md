@@ -15,7 +15,7 @@ This app is part one of two apps that I am currently developing for my Father's 
 <p float="left">
 <img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/DJApp%20Set%20Id.jpg" width=25% height=25% hspace="10">
 <img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/DJApp%20Display%20Id.jpg" width=25% height=25% hspace="10">
-<img src="https://github.com/DylonJaynes/dj_song_requests/blob/master/app/src/main/assets/DJApp%20Receive%20Requests.jpg" width=25% height=25% hspace="10">
+<img src="https://github.com/Dylon-Jaynes/dj_song_requests/blob/master/app/src/main/assets/DJApp%20Receive%20Requests.jpg" width=25% height=25% hspace="10">
 </p>
 
 <p float="left">
