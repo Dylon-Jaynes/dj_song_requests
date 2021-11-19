@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import com.example.djsongrequestsbusiness.R
 
 class ReceiveRequestsFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
