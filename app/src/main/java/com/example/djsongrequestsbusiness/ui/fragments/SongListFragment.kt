@@ -3,6 +3,7 @@ package com.example.djsongrequestsbusiness.ui.fragments
 import android.os.Bundle
 import android.view.*
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -69,6 +70,12 @@ class SongListFragment() : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        //hide action bar from splash screen
+        (activity as AppCompatActivity).supportActionBar!!.show()
     }
 
     override fun onDestroyView() {

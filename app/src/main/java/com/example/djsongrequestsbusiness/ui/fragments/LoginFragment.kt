@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -77,6 +78,12 @@ class LoginFragment : Fragment() {
             viewModel.onClickLogin(loginCredentials)
         })
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        //hide action bar from splash screen
+        (activity as AppCompatActivity).supportActionBar!!.hide()
     }
 
     override fun onDestroyView() {
