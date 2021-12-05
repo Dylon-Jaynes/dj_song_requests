@@ -10,7 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.djsongrequestsbusiness.databinding.FragmentForgotPasswordBinding
 import com.example.djsongrequestsbusiness.ui.viewModels.ForgotPasswordViewModel
-import com.example.djsongrequestsbusiness.ui.viewModels.LoginViewModel
 
 class ForgotPasswordFragment : Fragment() {
 

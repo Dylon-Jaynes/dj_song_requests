@@ -4,12 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.djsongrequestsbusiness.data.repositories.UserRepository
-import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
-import java.lang.Exception
-import java.lang.IllegalArgumentException
 
 class ForgotPasswordViewModel(application: Application): AndroidViewModel(application) {
 
