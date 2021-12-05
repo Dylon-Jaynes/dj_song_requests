@@ -29,4 +29,6 @@
     <string name="register_text">Register</string>
     <string name="forgot_password_text">Forgot Password</string>
     <string name="item_logout_text">Logout</string>
+    <string name="reset_pass_text">Reset</string>
+    <string name="password_reset_text">Password Reset</string>
 </resources>

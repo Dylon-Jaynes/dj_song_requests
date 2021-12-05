@@ -35,9 +35,9 @@ class LoginViewModel(application: Application): AndroidViewModel(application) {
         get() = _setPasswordError
 
     private val auth = FirebaseAuth.getInstance()
+    private val userRepository = UserRepository(auth)
 
     fun onClickLogin(loginCredentials: LoginModel) {
-        val userRepository = UserRepository(auth)
 
         try {
             val userSignUpResult = userRepository.userLogin(loginCredentials.email, loginCredentials.password)

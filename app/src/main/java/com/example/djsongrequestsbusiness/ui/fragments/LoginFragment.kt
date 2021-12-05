@@ -78,6 +78,10 @@ class LoginFragment : Fragment() {
             viewModel.onClickLogin(loginCredentials)
         })
 
+        binding.textviewForgotPassword.setOnClickListener(View.OnClickListener {
+            Navigation.findNavController(view).navigate(R.id.to_forgot_password_frag)
+        })
+
     }
 
     override fun onStart() {

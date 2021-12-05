@@ -12,6 +12,7 @@
         android:theme="@style/Theme.DJSongRequestsBusiness">
 
     <activity
+        android:exported="true"
         android:name=".ui.MainActivity"
         android:theme="@style/SplashTheme">
         <intent-filter >

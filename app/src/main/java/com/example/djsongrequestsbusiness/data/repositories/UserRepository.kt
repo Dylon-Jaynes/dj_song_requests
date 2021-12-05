@@ -36,4 +36,8 @@ class UserRepository(private val auth: FirebaseAuth) {
         return true
 
     }
+
+    fun passwordReset(email: String): Task<Void> {
+        return auth.sendPasswordResetEmail(email)
+    }
 }
